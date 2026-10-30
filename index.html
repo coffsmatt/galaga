@@ -267,10 +267,10 @@ const firebaseConfig = {
     // Default sample Top 5 scores
     const DEFAULT_SCORES = [
       { initials: "DAD", score: 18450, date: "Oct 12, 2026" },
-      { initials: "MAX", score: 14200, date: "Oct 14, 2026" },
-      { initials: "LUK", score: 11950, date: "Oct 15, 2026" },
-      { initials: "LEO", score: 8700, date: "Oct 15, 2026" },
-      { initials: "MOM", score: 6200, date: "Oct 16, 2026" }
+      { initials: "JOS", score: 14200, date: "Oct 14, 2026" },
+      { initials: "IKE", score: 11950, date: "Oct 15, 2026" },
+      { initials: "TOB", score: 8700, date: "Oct 15, 2026" },
+      { initials: "LEN", score: 6200, date: "Oct 16, 2026" }
     ];
 
     // 1. Initial local restore so scores never disappear on reload
@@ -579,15 +579,15 @@ const firebaseConfig = {
 function getStageConfig(lvl) {
   return {
     // Wave entry speeds
-    flySpeed: Math.min(3.2, 1.2 + lvl * 0.25),
+    flySpeed: Math.min(3.2, 1.2 + lvl * 0.05),
     // Dive frequency: longer pause at Stage 1 (~4s), drops to ~1.3s at higher stages
-    diveCooldownMin: Math.max(1.1, 4.0 - lvl * 0.45),
+    diveCooldownMin: Math.max(1.1, 4.0 - lvl * 0.25),
     // Dive travel velocity
-    diveSpeed: Math.min(2.4, 0.85 + lvl * 0.16),
+    diveSpeed: Math.min(2.4, 0.85 + lvl * 0.1),
     // Alien bullet velocity
-    bulletSpeed: Math.min(320, 140 + lvl * 22),
+    bulletSpeed: Math.min(320, 140 + lvl * 10),
     // Likelihood of alien firing during dive (0.2 at lvl 1, 0.85+ at lvl 5+)
-    shootChance: Math.min(0.9, 0.15 + lvl * 0.14),
+    shootChance: Math.min(0.9, 0.15 + lvl * 0.05),
     // Max simultaneous divers
     maxDivers: Math.min(4, Math.floor(1 + (lvl - 1) * 0.7))
   };
